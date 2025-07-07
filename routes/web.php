@@ -14,3 +14,11 @@ Route::get('/registrar', function () {
     return view('auth-registrar');
 });
 
+Route::post('/registrar', function (Illuminate\Http\Request $request) {
+    $nome = $request->input('nome');
+    $email = $request->input('email');
+    $senha = $request->input('password');
+
+    return redirect('/');
+});
+

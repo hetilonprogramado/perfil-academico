@@ -198,6 +198,8 @@
                   </div>
                 </div>
                 <button class="btn btn-primary d-grid w-100 mb-5">Inscrever-se</button>
+
+                
               </form>
 
               <p class="text-center mb-5">
