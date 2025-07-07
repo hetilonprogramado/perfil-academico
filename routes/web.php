@@ -11,6 +11,6 @@ Route::get('/login', function () {
 });
 
 Route::get('/registrar', function () {
-    return view('auth-register');
+    return view('auth-registrar');
 });
 

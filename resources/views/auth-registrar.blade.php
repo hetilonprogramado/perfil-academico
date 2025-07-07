@@ -154,12 +154,13 @@
               <h4 class="mb-1">A aventura começa aqui 🚀</h4>
               <p class="mb-5">Torne o gerenciamento do seu aplicativo fácil e divertido!</p>
 
-              <form id="formAuthentication" class="mb-5" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-5" action="/registrar" method="POST">
+                @csrf
                 <div class="form-floating form-floating-outline mb-5 form-control-validation">
                   <input
                     type="text"
                     class="form-control"
-                    id="username"
+                    id="name"
                     name="username"
                     placeholder="Digite seu nome de usuário"
                     autofocus />
