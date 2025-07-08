@@ -215,6 +215,9 @@ const submit = () => {
                     <h4 class="mb-1">Bem-vindo ao Materio! 👋🏻</h4>
                     <p class="mb-5">Por favor, faça login na sua conta e comece a aventura</p>
 
+                    <div v-if="form.errors.email" class="alert alert-danger mb-3">
+                        {{ form.errors.email }}
+                    </div>
                     <form @submit.prevent="submit" id="formAuthentication" class="mb-5" action="/" method="Get">
                         <div class="form-floating form-floating-outline mb-5 form-control-validation">
                         <input
