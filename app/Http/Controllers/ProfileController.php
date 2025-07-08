@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -59,5 +60,18 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function setCadastro(Request $request)
+    {
+       $requestData = $request->all();
+       try {
+            $dados = User::create($requestData);
+            $dados['message'] = 'Cadastro realizado com sucesso!';
+            return json_encode($dados);
+       } catch (\Exception $ex) {
+            $erro['mensagem'] = $ex->getMessage();
+            return response()->json($erro, 400);
+       }
     }
 }
