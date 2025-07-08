@@ -9,7 +9,7 @@ Route::get('/', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::post('/login', [ProfileController::class, 'postLogin'])->name('login');
+Route::post('/login', [ProfileController::class, 'getLogin'])->name('login');
 
 
 //::get('/dashboard', function () {
