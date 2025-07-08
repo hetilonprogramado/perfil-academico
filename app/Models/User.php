@@ -25,7 +25,6 @@ class User extends Authenticatable
         'password',
         'status_id',
         'grupos_user_id',
-        'funcionario_id',
         'user_deleted_id',
         'empresa_id',
     ];

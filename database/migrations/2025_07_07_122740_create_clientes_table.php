@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->integer('id');
+            $table->increments('id');
             $table->softDeletes();
             $table->integer('empresa_id')->unsigned();
             $table->string('rsocial_nome');
@@ -33,11 +33,8 @@ return new class extends Migration
             $table->enum('sexo', ['Masculino', 'Feminino'])->nullable();
             $table->enum('fornecedor', ['Nao', 'Sim'])->nullable()->default('Nao');
             $table->decimal('limite_credito')->nullable()->default(0);
-			$table->string('token_acesso')->nullable();
             $table->integer('user_deleted_id')->nullable()->unsigned();
             $table->timestamps();
-			
-			$table->primary(['id']);
             
             $table->foreign('status_id')->references('id')->on('statuses');
 			$table->foreign('empresa_id')->references('id')->on('empresas');

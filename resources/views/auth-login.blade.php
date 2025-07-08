@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html
-  lang="en"
+  lang="pt-br"
   class="layout-wide customizer-hide"
   data-assets-path="../assets/"
   data-template="vertical-menu-template-free">
@@ -211,7 +211,7 @@
 
               <p class="text-center mb-5">
                 <span>Novo em nossa plataforma?</span>
-                <a href="auth-register-basic.html">
+                <a href="{{route('registrar')}}">
                   <span>Criar uma conta</span>
                 </a>
               </p>
