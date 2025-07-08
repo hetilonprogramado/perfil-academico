@@ -215,14 +215,15 @@ const submit = () => {
                     <h4 class="mb-1">Bem-vindo ao Materio! 👋🏻</h4>
                     <p class="mb-5">Por favor, faça login na sua conta e comece a aventura</p>
 
-                    <form id="formAuthentication" class="mb-5" action="index.html" method="POST">
+                    <form @submit.prevent="submit" id="formAuthentication" class="mb-5" action="/" method="Get">
                         <div class="form-floating form-floating-outline mb-5 form-control-validation">
                         <input
-                            type="text"
+                            v-model="form.email"
+                            type="email"
                             class="form-control"
                             id="email"
-                            name="email-username"
-                            placeholder="Digite seu e-mail ou nome de usuário"
+                            name="email"
+                            placeholder="Digite seu e-mail"
                             autofocus />
                         <label for="email">E-mail ou nome de usuário</label>
                         </div>
@@ -231,6 +232,7 @@ const submit = () => {
                             <div class="input-group input-group-merge">
                             <div class="form-floating form-floating-outline">
                                 <input
+                                v-model="form.password"
                                 type="password"
                                 id="password"
                                 class="form-control"
@@ -247,7 +249,7 @@ const submit = () => {
                         </div>
                         <div class="mb-5 pb-2 d-flex justify-content-between pt-2 align-items-center">
                         <div class="form-check mb-0">
-                            <input class="form-check-input" type="checkbox" id="remember-me" />
+                            <input class="form-check-input" type="checkbox" id="remember-me" v-model="form.remember" />
                             <label class="form-check-label" for="remember-me"> Lembre de mim </label>
                         </div>
                         <a href="auth-forgot-password-basic.html" class="float-end mb-1">

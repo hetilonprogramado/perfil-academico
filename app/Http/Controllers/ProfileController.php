@@ -74,4 +74,22 @@ class ProfileController extends Controller
             return response()->json($erro, 400);
        }
     }
+
+    public function getLogin(Request $request) 
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (!Auth::attempt($credentials, $request->boolean('remeber'))) {
+            return back()->withErrors([
+                'email' => 'Credenciais estão incorretas. Verifique o e-mail e a senha.',
+            ])->onlyInput('dashboard');
+        }
+
+        $request->session()->regenerate();
+
+        return redirect()->intended('/dashboard');
+    }
 }
